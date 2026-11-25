@@ -4,3 +4,4 @@ class Solution {
         return n*factorial(n-1);
     }
 }
+Logic is:Call → Call → Call → Base condition → Return → Return → Answer.
