@@ -1,0 +1,38 @@
+class Solution {
+    public static int gcd(int a, int b) {
+        if (b==0) return a;
+        int rem=a%b;
+        return gcd(b,rem);
+    }
+}
+
+
+## Theory
+GCD is the greatest common divisor and the optimal approach of calculating it is 
+                                  
+                                             
+                                         GCD=GCD(b,a modulus b)
+Ex:a=48 and b=18
+sol)gcd=gcd(18,48%18 i.e equal to 12)
+so gcd(18,12) => gcd(12,18%12 i.e equal to 6)
+so gcd(12,6) =>gcd(6,12%6 i.e equal to 0) so the gcd is 6
+The GCD of 48 and 18 is 6
+
+Optimal code:
+
+class Solution {
+    public static int gcd(int a, int b) {
+        while(b != 0) {
+            int rem = a % b;
+            a = b;
+            b = rem;
+        }
+        return a;
+    }
+}
+
+Algorithm:
+1.calculate remainder
+2.swap the a value with b
+3.replace the b value with remainder 
+4.And the gcd will be a when the remainder between a and b is 0
